@@ -246,7 +246,7 @@ Storage::openFile = (callback) ->
       @parallel() null
       return
 
-    fs.open filename, 'a+', 0666, @parallel()
+    fs.open filename, 'a+', 0o0666, @parallel()
     fs.stat filename, @parallel()
 
     return
@@ -304,7 +304,7 @@ Storage::createFile = (writeRoot, callback) ->
     callback = writeRoot
     writeRoot = true
 
-  fs.open filename, 'w+', 0666, (err, fd) =>
+  fs.open filename, 'w+', 0o0666, (err, fd) =>
     if err
       return callback err
 
@@ -668,7 +668,7 @@ Storage::afterCompact = (callback) ->
       [0...files.length].forEach (i) =>
         file = files[i]
         fn = @parallel()
-        fs.open file.filename, 'a+', 0666, (err, fd) ->
+        fs.open file.filename, 'a+', 0o0666, (err, fd) ->
           file.fd = fd
           fn err, file
 
