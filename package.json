@@ -7,7 +7,8 @@
     "step": ">= 0.0.4"
   },
   "devDependencies": {
-    "coffee-script": ">= 1.0.1",
+    "babel-cli": "^6.26.0",
+    "coffeescript": "^2.3.1",
     "vows": ">= 0.5.8"
   },
   "engine": [
@@ -15,6 +16,8 @@
   ],
   "main": "./build/index",
   "scripts": {
-    "test": "vows --spec test/*-test.js"
+    "test": "vows --spec test/*-test.js",
+    "build": "cake",
+    "buildhc": "babel build --out-file ./hcbuild/btree.js"
   }
 }
