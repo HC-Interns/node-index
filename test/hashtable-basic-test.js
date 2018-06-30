@@ -5,7 +5,7 @@ var vows = require('vows'),
     helpers = require('./helpers');
 var index = require('../lib/index');
 
-var storage = require('../lib/index/memory-storage');
+var storage = require('../lib/index/hashtable-storage');
 
 var options = {};
 var index_options = {storage: storage.createStorage()};
