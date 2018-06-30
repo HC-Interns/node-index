@@ -1,3 +1,4 @@
+require('coffee-script/register');
 var vows = require('vows'),
     assert = require('assert'),
     step = require('step'),
